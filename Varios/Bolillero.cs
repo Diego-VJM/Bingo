@@ -4,10 +4,12 @@ public class Bolillero
 {
     public List<int> bolillas { get; set; }
     public List<int> Acertadas { get; set; }
+    public long Aciertos{get; set;}
     public Iazar iazar { get; set; }
     public Bolillero(int CantidadBolillas)
     {
         bolillas = new List<int>();
+        Acertadas=new List<int>();
         for (int i = 0; i < CantidadBolillas; i++) { bolillas.Add(i); }
     }
     //Para clonar
@@ -34,9 +36,9 @@ public class Bolillero
         }
         return true;
     }
-    public long JugadaNV(long CantidadJugada, List<int> bolillas)
+    public long JugadaNV( List<int> bolillas,int CantidadJugada)
     {
-        long Aciertos = 0;
+        
         for (int i = 0; i < CantidadJugada; i++)
         { Jugada(bolillas); Aciertos += 1; }
         return Aciertos;
